@@ -1,0 +1,33 @@
+{
+    "products":
+    [
+        {
+            "id": 1,
+            "name": "Coca Cola",
+            "price" : 10000,
+            "img": "https://th.bing.com/th/id/OIP.4y8DbMJuTIsPiBmpfXd46AHaIM?pid=ImgDet&rs=1",
+            "About": "Coca-Cola® is a refreshing McDonald's soda option that complements all of your menu favorites."
+        },
+        {
+            "id": 2,
+            "name": "Pepsi",
+            "price" : 10000,
+            "img": "https://i.pinimg.com/originals/2e/9d/0f/2e9d0fd0a2f1a2569f24c74cabb197f3.jpg",
+            "About": "The classic and refreshing fountain drink with a unique blend of 23 flavors"
+        },
+        {
+            "id": 3,
+            "name": "Sprite",
+            "price" : 10000,
+            "img": "https://res-2.cloudinary.com/esajee-com/s--5OmHFWhB--/f_auto,fl_lossy,q_auto/c_lpad,dpr_1.0,f_auto,h_700,q_auto,w_700/media/catalog/product/5/4/5449000012203-sprite-1-5l-napoj-gazowany.jpg",
+            "About": "Sprite® is a delicious lemon-lime fountain drink and is available in sizes extra small, small, medium, and large."
+        },
+        {
+            "id" :4,
+            "name": "Sweet Tea",
+            "price": 12000,
+            "img": "https://th.bing.com/th/id/R.6ef52b8e5a751d5f4bb365ab75af226f?rik=g%2fbBIVNh%2baCdHA&pid=ImgRaw&r=0",
+            "About": "Sweet Tea is made from a briskly refreshing blend of orange pekoe and pekoe cut black tea, sweetened to perfection."
+        }
+    ]
+}

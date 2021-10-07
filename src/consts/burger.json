@@ -1,0 +1,37 @@
+{
+    "products":
+    [
+        {
+            "id" : 1,
+            "name" : "Chicken Burger",
+            "price": 120000,
+            "img": "https://th.bing.com/th/id/R.e63b1caf34e2232eab611564ac6330c8?rik=kcfJXZO%2fOld3Nw&pid=ImgRaw&r=0",
+            "About": "With our Spicy Pepper Sauce topping the southern style fried chicken fillet on a toasted potato roll, this sandwich was made for those who like it crispy, juicy, tender and hot."
+
+        },
+        {
+            "id" : 2,
+            "name" : " Steak Burger",
+            "price": 120000,
+            "img": "https://www.mooyah.com/uploads/globals/Cheddar-Bacon-Burger.png" ,
+            "About": "Beef burger with a taste like no other. It contains no artificial flavors, preservatives or added colors from artificial sources."
+        },
+        {
+            "id" : 3,
+            "name" : " Lamb Burger",
+            "price": 120000,
+            "img": "https://th.bing.com/th/id/OIP.cbExHEBoI5yiZc9_WtzJ-gHaFW?pid=ImgDet&rs=1",
+            "About": " Layered with two slices of melty American cheese, slivered onions and tangy pickles on a soft, fluffy sesame seed hamburger bun."
+        },
+        {
+            "id" : 4,
+            "name" : " Cheese Burger",
+            "price": 120000,
+            "img": "https://th.bing.com/th/id/R.1c154dac25973673b68bc6b6071992be?rik=jNrkRKzKsDUANA&riu=http%3a%2f%2fwww.urdupalace.com%2fwp-content%2fuploads%2f2017%2f01%2fcheese-burger.png&ehk=ASF3Thot5xC8gHbFhOvW6QijCGGgegwNEUwjhMUHpQY%3d&risl=&pid=ImgRaw&r=0",
+            "About": "Our simple, classic cheeseburger begins with a 100% pure beef burger seasoned with just a pinch of salt and pepper."
+        }
+
+        
+    ]
+
+}

@@ -1,0 +1,30 @@
+{   
+  "food":[
+    {
+        "id": 1,
+        "name": "Meat Pizza",
+        "img": "https://img-fotki.yandex.ru/get/197213/119528728.3154/0_192db5_3fd061d1_L"
+    },
+
+    {
+        "id": 2,
+        "name": "Cheese pizza",
+        "img": "https://burgerking.at/001_general/products/productimages/burger/image"
+    },
+
+    {
+        "id": 3,
+        "name": "Burger",
+        "img": "https://burgerking.at/001_general/products/productimages/burger/image-thumb__506__product_detail/crispychicken.png"
+    },
+
+    {
+        "id": 4,
+        "name": "ShuShi",
+        "img": "https://pngimg.com/uploads/sushi/sushi_PNG98832.png"
+    }
+
+]
+}
+  
+ 

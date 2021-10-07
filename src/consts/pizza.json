@@ -1,0 +1,35 @@
+{
+    "products":
+    [
+        {
+            "id" : 1,
+            "name" : "Meat Pizza",
+            "price": 100000,
+            "img": "http://pngimg.com/uploads/pizza/pizza_PNG7126.png",
+            "About": "Delicious and protein-rich with bacon, sausage, beef, ham and pepperoni"
+        },
+        {
+            "id" : 2,
+            "name" : "cheese Pizza",
+            "price": 120000,
+            "img": "https://th.bing.com/th/id/OIP.hKdUf8F2h2z6eqYenXbZggHaEn?pid=ImgDet&rs=1",
+            "About": "Fisherman's Tuna Pizza bring you the dedicate taste of the ocean with tuna, crab sticks, onions, pineapples on top of Pesto sauce"
+        },
+        {
+            "id" : 3,
+            "name" : " Seafood Pizza",
+            "price": 120000,
+            "img": "https://th.bing.com/th/id/OIP.P77zfKFLaQoSf9-hPjhwZAHaEW?pid=ImgDet&rs=1",
+            "About": "Black olives, fresh cherry tomatoes, mushrooms, pineapples, sweet corns, zucchini on top of Mozzarella cheese"
+        },
+        {
+            "id" : 4,
+            "name" : " Beef Pizza",
+            "price": 120000,
+            "img": "http://order.badhige.com/product_images/u/353/BBQ_Beef_Pizza__28742_zoom.png",
+            "About": "Shrimps, squids, pineapples, crabsticks, onions on a bed of hot black pepper sauce and topped with Mozzarella cheese"
+        }
+
+    ]
+
+}
