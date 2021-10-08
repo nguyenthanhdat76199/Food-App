@@ -30,7 +30,7 @@ const CustomTabBarButton =({children, onPress}) =>(
 const Tabs = () =>{
     return(
         <Tab.Navigator
-        tabBarOptions={{
+        screenOptions={{
             showLabel:false,
             style:{
                 position:'absolute',
