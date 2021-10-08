@@ -1,28 +1,42 @@
 
     {
-        "categories":[
+        "list":[
             {
                 "id": 1,
-                "name": "pizza",
-                "img": "https://cdn-icons-png.flaticon.com/512/1404/1404945.png"
+                "name": "Pizza",
+                "img": "../../src/assets/categories/cheesePizza.png"
             },
     
             {
                 "id": 2,
-                "name": "chicken",
-                "img": "https://cdn-icons-png.flaticon.com/512/2884/2884642.png"
+                "name": "Burger",
+                "img": "../../src/assets/categories/chickenBurger.png"
             },
     
             {
                 "id": 3,
-                "name": "noodle",
-                "img": "https://cdn-icons-png.flaticon.com/512/2718/2718224.png"
+                "name": "Drink",
+                "img": "../../src/assets/categories/drink.png"
             },
     
             {
                 "id": 4,
-                "name": "drink",
-                "img": "https://cdn-icons-png.flaticon.com/512/2405/2405479.png"
+                "name": "SuShi",
+                "img": "../../src/assets/categories/sushi.png"
+            }
+            ,
+    
+            {
+                "id": 5,
+                "name": "SuShi",
+                "img": "../../src/assets/categories/sushi.png"
+            }
+            ,
+    
+            {
+                "id": 6,
+                "name": "SuShi",
+                "img": "../../src/assets/categories/sushi.png"
             }
     
         ]

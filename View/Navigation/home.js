@@ -16,7 +16,7 @@ const MainStackNavigator = () =>{
     return(
         <Stack.Navigator screenOptions={screenOptionStyle}>
             <Stack.Screen 
-            name='Home' 
+            name='Head' 
             component={HomeScreen} 
             options={{headerShown: false}}
             >
