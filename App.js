@@ -1,4 +1,3 @@
-
 import 'react-native-gesture-handler';
 import React from 'react';
 import {StatusBar} from 'react-native';
@@ -13,12 +12,20 @@ import Tabs from './View/Navigation/BottomNavigator';
 const Stack = createStackNavigator();
 
 const App = () => {
-  return(
+  return (
     <NavigationContainer>
-      <StatusBar backgroundColor = {COLORS.white} barStyle ='dark-content'/>
-      <Stack.Navigator screenOptions={{headerShown:false}}>
-        <Stack.Screen name = "BoardScreen" options={{headerShown:false}} component ={OnBoardScreen}/>
-        <Stack.Screen name = "Home" options={{headerShown:false}} component ={Tabs}/>
+      <StatusBar backgroundColor={COLORS.white} barStyle="dark-content" />
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen
+          name="BoardScreen"
+          options={{headerShown: false}}
+          component={OnBoardScreen}
+        />
+        <Stack.Screen
+          name="MainScreen"
+          options={{headerShown: false}}
+          component={Tabs}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

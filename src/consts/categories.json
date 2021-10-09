@@ -1,0 +1,45 @@
+
+    {
+        "list":[
+            {
+                "id": 1,
+                "name": "Pizza",
+                "img": "https://cdn-icons-png.flaticon.com/512/1404/1404945.png"
+            },
+    
+            {
+                "id": 2,
+                "name": "Burger",
+                "img": "https://www.mooyah.com/uploads/globals/Cheddar-Bacon-Burger.png"
+            },
+    
+            {
+                "id": 3,
+                "name": "Drink",
+                "img": "https://th.bing.com/th/id/R.6ef52b8e5a751d5f4bb365ab75af226f?rik=g%2fbBIVNh%2baCdHA&pid=ImgRaw&r=0"
+            },
+    
+            {
+                "id": 4,
+                "name": "SuShi",
+                "img": "https://static.wixstatic.com/media/2cd43b_c8eee010145e45ba934b4cddb5af8df7~mv2.png/v1/fill/w_270,h_270,q_90/2cd43b_c8eee010145e45ba934b4cddb5af8df7~mv2.png"
+            }
+            ,
+    
+            {
+                "id": 5,
+                "name": "Salad",
+                "img": "https://w7.pngwing.com/pngs/692/99/png-transparent-delicious-food-food-salad-vegetable-salad.png"
+            }
+            ,
+    
+            {
+                "id": 6,
+                "name": "Snack",
+                "img": "https://image.flaticon.com/icons/png/512/859/859293.png"
+            }
+    
+        ]
+    }
+
+
