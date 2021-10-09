@@ -1,7 +1,11 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import HomeScreen from '../Screens/HomeScreen';
+
+import HomeScreen from '../Screens/HomeScreen.js';
+import CartScreen from '../Screens/CartScreen.js';
+
+
 import COLORS from '../../src/consts/color';
 import MainStackNavigator from './Home';
 
@@ -156,7 +160,7 @@ const Tabs = () => {
       />
       <Tab.Screen
         name="Cart"
-        component={HomeScreen}
+        component={CartScreen}
         options={{
           tabBarIcon: ({focused}) => (
             <View style={{alignItems: 'center', justifyContent: 'center'}}>

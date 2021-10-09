@@ -16,14 +16,13 @@ import {
   TouchableOpacity,
 } from 'react-native-gesture-handler';
 
-const categories = require ('../../src/consts/cate.json');
+const categories = require('../../src/consts/categories.json');
 
 import food from '../../src/consts/food.json';
 
 const width = Dimensions.get('screen').width / 2 - 30;
-let pdjs1 = require('../../src/consts/pizza.json');
-let pdjs2 = require('../../src/consts/burger.json');
-let pdjs3 = require('../../src/consts/water.json');
+let pdjs = require('../../src/consts/foodList.json');
+
 
 export default class HomeScreen extends Component {
   constructor(props) {
@@ -32,12 +31,11 @@ export default class HomeScreen extends Component {
     this.refreshFlatlist = this.refreshFlatlist.bind(this);
     this.gotoDetail = this.gotoDetail.bind(this);
     this.state = {
-      data: pdjs1.products,
+      data: pdjs.Pizza,
     };
   }
   gotoDetail(product) {
     this.navigation.navigate('Detail', product);
-    console.log(categories);
   }
 
   refreshFlatlist(products) {
@@ -134,7 +132,7 @@ export default class HomeScreen extends Component {
           </View>
           <Image
             source={require('../../src/assets/user.png')}
-            style={{height: 50, width: 50, borderRadius: 25}}
+            style={{height: 30, width: 30, borderRadius: 25}}
           />
         </View>
         <View
@@ -169,28 +167,29 @@ export default class HomeScreen extends Component {
             paddingHorizontal: 10,
           }}>
           <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={style.categoriesListContainer}>
-          {categories.list.map((category, index) => (
-            <TouchableOpacity key={index} activeOpacity={0.8}>
-              <View>
-                <Image
-                  source={require({categoty.img})}
-
-                  // source={require('../../src/assets/categories/chickenBurger.png')}
-                  style={{
-                    width: 25,
-                    height: 26,
-                    marginLeft: 10,
-                  }}
-                />
-                <Text style={{fontSize: 18, marginLeft: 10, marginRight: 60}}>
-                  {category.name}
-                </Text>
+            horizontal
+            // contentContainerStyle={style.categoriesListContainer}
+            showsHorizontalScrollIndicator={false}>
+            {categories.list.map((category, index) => (
+              <View style={style.btnCategory} key={index}>
+                <TouchableOpacity  activeOpacity={0.8} style ={{flexDirection:'row'}}
+                  // onPress ={()=> console.log(pdjs[`${category.name}`])}
+                  onPress ={()=> this.refreshFlatlist(pdjs[`${category.name}`])}
+                  >
+                  <Image
+                    source={{uri: category.img}}
+                    style={{
+                      width: 25,
+                      height: 26,
+                      marginLeft: 10,
+                    }}
+                  />
+                  <Text style ={{fontSize: 18, textAlign:"center", color: "white"}}>
+                    {category.name}
+                  </Text>
+                </TouchableOpacity>
               </View>
-            </TouchableOpacity>
-          ))}
+            ))}
           </ScrollView>
         </View>
 
@@ -263,7 +262,7 @@ const style = StyleSheet.create({
     width,
     marginHorizontal: 2,
     marginBottom: 20,
-    marginTop: 50,
+    marginTop: 30,
     borderRadius: 15,
     elevation: 13,
     backgroundColor: COLORS.white,

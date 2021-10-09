@@ -1,0 +1,110 @@
+{
+    "Pizza":
+    [
+        {
+            "id" : 1,
+            "name" : "Meat Pizza",
+            "price": 100000,
+            "img": "http://pngimg.com/uploads/pizza/pizza_PNG7126.png",
+            "About": "Delicious and protein-rich with bacon, sausage, beef, ham and pepperoni"
+        },
+        {
+            "id" : 2,
+            "name" : "cheese Pizza",
+            "price": 120000,
+            "img": "https://th.bing.com/th/id/OIP.hKdUf8F2h2z6eqYenXbZggHaEn?pid=ImgDet&rs=1",
+            "About": "Fisherman's Tuna Pizza bring you the dedicate taste of the ocean with tuna, crab sticks, onions, pineapples on top of Pesto sauce"
+        },
+        {
+            "id" : 3,
+            "name" : " Seafood Pizza",
+            "price": 120000,
+            "img": "https://th.bing.com/th/id/OIP.P77zfKFLaQoSf9-hPjhwZAHaEW?pid=ImgDet&rs=1",
+            "About": "Black olives, fresh cherry tomatoes, mushrooms, pineapples, sweet corns, zucchini on top of Mozzarella cheese"
+        },
+        {
+            "id" : 4,
+            "name" : " Beef Pizza",
+            "price": 120000,
+            "img": "http://order.badhige.com/product_images/u/353/BBQ_Beef_Pizza__28742_zoom.png",
+            "About": "Shrimps, squids, pineapples, crabsticks, onions on a bed of hot black pepper sauce and topped with Mozzarella cheese"
+        }
+    ],
+    "Burger":
+    [
+        {
+            "id" : 1,
+            "name" : "Chicken Burger",
+            "price": 120000,
+            "img": "https://th.bing.com/th/id/R.e63b1caf34e2232eab611564ac6330c8?rik=kcfJXZO%2fOld3Nw&pid=ImgRaw&r=0",
+            "About": "With our Spicy Pepper Sauce topping the southern style fried chicken fillet on a toasted potato roll, this sandwich was made for those who like it crispy, juicy, tender and hot."
+
+        },
+        {
+            "id" : 2,
+            "name" : " Steak Burger",
+            "price": 120000,
+            "img": "https://www.mooyah.com/uploads/globals/Cheddar-Bacon-Burger.png" ,
+            "About": "Beef burger with a taste like no other. It contains no artificial flavors, preservatives or added colors from artificial sources."
+        },
+        {
+            "id" : 3,
+            "name" : " Lamb Burger",
+            "price": 120000,
+            "img": "https://th.bing.com/th/id/OIP.cbExHEBoI5yiZc9_WtzJ-gHaFW?pid=ImgDet&rs=1",
+            "About": " Layered with two slices of melty American cheese, slivered onions and tangy pickles on a soft, fluffy sesame seed hamburger bun."
+        },
+        {
+            "id" : 4,
+            "name" : " Cheese Burger",
+            "price": 120000,
+            "img": "https://th.bing.com/th/id/R.1c154dac25973673b68bc6b6071992be?rik=jNrkRKzKsDUANA&riu=http%3a%2f%2fwww.urdupalace.com%2fwp-content%2fuploads%2f2017%2f01%2fcheese-burger.png&ehk=ASF3Thot5xC8gHbFhOvW6QijCGGgegwNEUwjhMUHpQY%3d&risl=&pid=ImgRaw&r=0",
+            "About": "Our simple, classic cheeseburger begins with a 100% pure beef burger seasoned with just a pinch of salt and pepper."
+        }
+    ],
+    "Drink":
+    [
+        {
+            "id": 1,
+            "name": "Coca Cola",
+            "price" : 10000,
+            "img": "https://th.bing.com/th/id/OIP.4y8DbMJuTIsPiBmpfXd46AHaIM?pid=ImgDet&rs=1",
+            "About": "Coca-Cola® is a refreshing McDonald's soda option that complements all of your menu favorites."
+        },
+        {
+            "id": 2,
+            "name": "Pepsi",
+            "price" : 10000,
+            "img": "https://i.pinimg.com/originals/2e/9d/0f/2e9d0fd0a2f1a2569f24c74cabb197f3.jpg",
+            "About": "The classic and refreshing fountain drink with a unique blend of 23 flavors"
+        },
+        {
+            "id": 3,
+            "name": "Sprite",
+            "price" : 10000,
+            "img": "https://res-2.cloudinary.com/esajee-com/s--5OmHFWhB--/f_auto,fl_lossy,q_auto/c_lpad,dpr_1.0,f_auto,h_700,q_auto,w_700/media/catalog/product/5/4/5449000012203-sprite-1-5l-napoj-gazowany.jpg",
+            "About": "Sprite® is a delicious lemon-lime fountain drink and is available in sizes extra small, small, medium, and large."
+        },
+        {
+            "id" :4,
+            "name": "Sweet Tea",
+            "price": 12000,
+            "img": "https://th.bing.com/th/id/R.6ef52b8e5a751d5f4bb365ab75af226f?rik=g%2fbBIVNh%2baCdHA&pid=ImgRaw&r=0",
+            "About": "Sweet Tea is made from a briskly refreshing blend of orange pekoe and pekoe cut black tea, sweetened to perfection."
+        }
+    ],
+    "Salad":
+    [
+        {
+            "id": 1,
+            "name": "Corn Salad",
+            "price" : 50000,
+            "img": "https://img.favpng.com/6/8/13/couscous-vegetarian-cuisine-cucumber-sandwich-recipe-ptitim-png-favpng-GGA0ws1MkkDm6nGHbHzkRg8mF.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Cucumber & Tomato Salad",
+            "img": "https://images.media-allrecipes.com/userphotos/8097337.jpg"
+        }
+    ]
+}
