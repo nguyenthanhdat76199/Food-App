@@ -50,7 +50,7 @@ export default class HomeScreen extends Component{
                             </Text>
                             <View style={{flexDirection:'row',justifyContent:'space-between',marginTop:15}}> 
                                 <Text style={{fontSize: 15,textAlign: 'left',fontWeight:'bold',marginLeft:5}}>
-                                    {product.price} VNĐ
+                                    ${product.price} 
                                 </Text>
                                 <View style={{
                                     height: 25,
@@ -90,9 +90,13 @@ export default class HomeScreen extends Component{
                         What do you want today
                     </Text>
                 </View>
-                <Image source ={require("../../src/assets/user.png")}
-                        style ={{height: 50,width: 50, borderRadius: 25}}
+                <TouchableOpacity 
+                onPress={()=>this.navigation.navigate('Mail')}>
+                <Image source ={require("../../src/assets/email.png")}
+                        style ={{height: 40,width: 40}}
                  />
+                </TouchableOpacity>
+                
             </View>
             <View style = {{
                 marginTop :40,
@@ -114,14 +118,17 @@ export default class HomeScreen extends Component{
                 </View>
             </View>  
 
-           
+          
             <View style={{flexDirection: 'row',
                             paddingVertical: 10,
                             alignItems: 'center',
                             paddingHorizontal: 10,                          
                         }}>
                     <View style={style.btnCategory}>
-                        <TouchableOpacity style ={{flexDirection:'row'}}>
+                        <TouchableOpacity 
+                        onPress={()=> this.refreshFlatlist(pdjs1.products)}
+                        style ={{flexDirection:'row'}}>
+                        
                         <Image
                             source ={require('../../src/assets/categories/cheesePizza.png')}
                             style={{

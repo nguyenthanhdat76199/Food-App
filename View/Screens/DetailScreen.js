@@ -46,7 +46,7 @@ export default class DetailScreen extends Component {
                           {this.state.data.name}
                       </Text>
                       <Text style={{fontSize: 24,fontWeight:'bold',color: COLORS.white}}>
-                          {this.state.data.price} VNĐ
+                          ${this.state.data.price} 
                       </Text>
                     </View>
                     <View style={{marginTop: 20, }}>

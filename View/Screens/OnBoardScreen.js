@@ -9,15 +9,16 @@ const OnBoardScreen = ({navigation}) =>{
    <SafeAreaView style={{flex: 1,backgroundColor:COLORS.white}}>
      <View style={{height: 400}}>
        <Image style={{
-         width:"100%",
+         width:"80%",
          resizeMode: 'contain',
-         top: -150, 
-       }} source={require('../../src/assets/onboardImage.png')}/>
+         top: -60, 
+         marginLeft: 40,
+       }} source={require('../../src/assets/imagesApp.png')}/>
      </View>
      <View style={style.textContainer}>
      <View>
        <Text style={{fontSize: 32,fontWeight:'bold',textAlign:'center'}}>
-         Delicious Food
+         Fast Food
        </Text>
        <Text style={{
           marginTop: 10,

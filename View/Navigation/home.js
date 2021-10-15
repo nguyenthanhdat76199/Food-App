@@ -2,6 +2,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../../View/Screens/HomeScreen";
 import DetailScreen from "../Screens/DetailScreen";
+import DangNhap from "../../View/DangNhap/DangNhap";
 
 const Stack = createStackNavigator();
 const screenOptionStyle ={
@@ -15,6 +16,12 @@ const screenOptionStyle ={
 const MainStackNavigator = () =>{
     return(
         <Stack.Navigator screenOptions={screenOptionStyle}>
+             {/* <Stack.Screen 
+            name='Login' 
+            component={DangNhap} 
+            options={{headerShown: false}}
+            >
+            </Stack.Screen> */}
             <Stack.Screen 
             name='Home' 
             component={HomeScreen} 
@@ -27,6 +34,7 @@ const MainStackNavigator = () =>{
             options ={{headerShown: false}}
             >
             </Stack.Screen>
+           
         </Stack.Navigator>
     )
 }

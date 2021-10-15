@@ -9,6 +9,8 @@ import BottomNavigator from './View/Navigation/BottomNavigator';
 import OnBoardScreen from './View/Screens/OnBoardScreen';
 import COLORS from './src/consts/color';
 import Tabs from './View/Navigation/BottomNavigator';
+import DangNhap from './View/DangNhap/DangNhap';
+import MailScreen from './View/Screens/MailScreen';
 
 const Stack = createStackNavigator();
 
@@ -17,8 +19,10 @@ const App = () => {
     <NavigationContainer>
       <StatusBar backgroundColor = {COLORS.white} barStyle ='dark-content'/>
       <Stack.Navigator screenOptions={{headerShown:false}}>
-        <Stack.Screen name = "BoardScreen" options={{headerShown:false}} component ={OnBoardScreen}/>
-        <Stack.Screen name = "Home" options={{headerShown:false}} component ={Tabs}/>
+        <Stack.Screen name = "Login" options={{headerShown:false}} component ={DangNhap}/>   
+        <Stack.Screen name = "BoardScreen" options={{headerShown:false}} component ={OnBoardScreen}/>    
+        <Stack.Screen name = "Home" options={{headerShown:false}} component ={Tabs}/>  
+        <Stack.Screen name = "Mail" options={{headerShown:false}} component ={MailScreen}/>   
       </Stack.Navigator>
     </NavigationContainer>
   );
