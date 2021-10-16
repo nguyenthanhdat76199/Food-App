@@ -1,130 +1,122 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import {SafeAreaView, StyleSheet, View, Text, Image} from 'react-native';
 import COLORS from '../../src/consts/color';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import {SecondaryButton} from '../Components/Button';
 
-import {AsyncStorage} from 'react-native';
+import {useDispatch, useSelector} from 'react-redux'
+import {addNewPrduct} from '../../src/redux/actions/cartList'
 
-export default class DetailScreen extends Component {
-  constructor(prop) {
-    super(prop);
-    this.navigation = prop.navigation;
-    this.state = {
-      data: prop.route.params,
-      listProducts: [],
-    };
+const DetailScreen = (props) => {
+
+  const [navigation, setNavigation] = useState(props.navigation);
+  const [data, setData] = useState(props.route.params);
+  const newFoodList = useSelector(state => state.cartList.list)
+  const dispatch = useDispatch();
+
+  const addProduct = () => {
+    let count = 0
+    newFoodList.forEach(element => {
+      if(element.id == data.id){
+        count++;
+      }
+    });
+    if(count == 0){
+      const action = addNewPrduct(data);
+      dispatch(action);
+    }
   }
 
-  render() {
-    return (
-      <ScrollView>
-        <SafeAreaView style={{flex: 1, backgroundColor: COLORS.white}}>
-          <View style={styles.header}>
-            <View style={styles.goback}>
-              <TouchableOpacity>
-                <Text
-                  style={styles.textback}
-                  onPress={() => this.navigation.navigate('Head')}>
-                  Back
-                </Text>
-              </TouchableOpacity>
-            </View>
-            <View style={{backgroundColor: COLORS.white}}>
-              <TouchableOpacity>
-                <Image
-                  source={require('../../src/assets/Thongbao.png')}
-                  style={{
-                    width: 30,
-                    height: 30,
-                  }}
-                />
-              </TouchableOpacity>
-            </View>
+  return (
+    <ScrollView>
+      <SafeAreaView style={{flex: 1, backgroundColor: COLORS.white}}>
+        <View style={styles.header}>
+          <View style={styles.goback}>
+            <TouchableOpacity>
+              <Text
+                style={styles.textback}
+                onPress={() => navigation.navigate('Head')}>
+                Back
+              </Text>
+            </TouchableOpacity>
           </View>
-          <View style={styles.imageContainer}>
-            <Image
-              source={{uri: this.state.data.img}}
-              style={{
-                resizeMode: 'contain',
-                flex: 1,
-                height: 220,
-                width: 220,
-                borderRadius: 20,
-              }}
-            />
+          <View style={{backgroundColor: COLORS.white}}>
+            <TouchableOpacity>
+              <Image
+                source={require('../../src/assets/Thongbao.png')}
+                style={{
+                  width: 30,
+                  height: 30,
+                }}
+              />
+            </TouchableOpacity>
           </View>
-          <View style={styles.container_details}>
-            <View style={styles.detail}>
-              <View
-                style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                <Text
-                  style={{
-                    fontSize: 24,
-                    fontWeight: 'bold',
-                    color: COLORS.white,
-                  }}>
-                  {this.state.data.name}
-                </Text>
-                <Text
-                  style={{
-                    fontSize: 24,
-                    fontWeight: 'bold',
-                    color: COLORS.white,
-                  }}>
-                  {this.state.data.price} VNĐ
-                </Text>
-              </View>
-              <View style={{marginTop: 20}}>
-                <Text
-                  style={{
-                    fontSize: 24,
-                    fontWeight: 'bold',
-                    color: COLORS.white,
-                  }}>
-                  About:
-                </Text>
-              </View>
-              <View style={{marginTop: 20}}>
-                <Text
-                  style={{
-                    fontSize: 24,
-                    fontWeight: 'bold',
-                    color: COLORS.white,
-                  }}>
-                  {this.state.data.About}
-                </Text>
-              </View>
-              <View style={{marginTop: 30, marginBottom: 40}}>
-                <SecondaryButton
-                  // onPress={async () => {
-                  //   this.setState({
-                  //     listProducts: this.state.listProducts.push(
-                  //       this.state.data,
-                  //     ),
-                  //   });
-                  //   AsyncStorage.setItem('listCart', 'adsd');
-                  //   try {
-                  //     const value = await AsyncStorage.getItem('TASKS');
-                  //     if (value !== null) {
-                  //       // We have data!!
-                  //       console.log(value);
-                  //     }
-                  //   } catch (error) {
-                  //     // Error retrieving data
-                  //   }
-                  //   console.log(listC);
-                  // }}
-                  title="Add to Cart"
-                />
-              </View>
+        </View>
+        <View style={styles.imageContainer}>
+          <Image
+            source={{uri: data.img}}
+            style={{
+              resizeMode: 'contain',
+              flex: 1,
+              height: 220,
+              width: 220,
+              borderRadius: 20,
+            }}
+          />
+        </View>
+        <View style={styles.container_details}>
+          <View style={styles.detail}>
+            <View
+              style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+              <Text
+                style={{
+                  fontSize: 24,
+                  fontWeight: 'bold',
+                  color: COLORS.white,
+                }}>
+                {data.name}
+              </Text>
+              <Text
+                style={{
+                  fontSize: 24,
+                  fontWeight: 'bold',
+                  color: COLORS.white,
+                }}>
+                {data.price} VNĐ
+              </Text>
+            </View>
+            <View style={{marginTop: 20}}>
+              <Text
+                style={{
+                  fontSize: 24,
+                  fontWeight: 'bold',
+                  color: COLORS.white,
+                }}>
+                About:
+              </Text>
+            </View>
+            <View style={{marginTop: 20}}>
+              <Text
+                style={{
+                  fontSize: 24,
+                  fontWeight: 'bold',
+                  color: COLORS.white,
+                }}>
+                {data.About}
+              </Text>
+            </View>
+            <View style={{marginTop: 30, marginBottom: 40}}>
+              <SecondaryButton onPress = {addProduct} title="Add to Cart" />
             </View>
           </View>
-        </SafeAreaView>
-      </ScrollView>
-    );
-  }
-}
+        </View>
+      </SafeAreaView>
+    </ScrollView>
+  );
+};
+
+export default DetailScreen;
+
 const styles = StyleSheet.create({
   container_details: {
     paddingLeft: 24,
