@@ -3,7 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../../View/Screens/HomeScreen";
 import DetailScreen from "../Screens/DetailScreen";
 import DangNhap from "../../View/DangNhap/DangNhap";
-
+import DetailMail from "../Screens/DetailMail";
 const Stack = createStackNavigator();
 const screenOptionStyle ={
     headerStyle: {
@@ -34,7 +34,10 @@ const MainStackNavigator = () =>{
             options ={{headerShown: false}}
             >
             </Stack.Screen>
-           
+            {/* <Stack.Screen 
+            name = "DetailMail" 
+            options={{headerShown:false}} 
+            component ={DetailMail}/> */}
         </Stack.Navigator>
     )
 }

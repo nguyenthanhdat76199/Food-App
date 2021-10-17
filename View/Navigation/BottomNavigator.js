@@ -4,6 +4,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../Screens/HomeScreen";
 import COLORS from "../../src/consts/color";
 import MainStackNavigator from "./home";
+import MailScreen from "../Screens/MailScreen";
+import MapScreen from "../Screens/MapScreen";
 const Tab = createBottomTabNavigator();
 const CustomTabBarButton =({children, onPress}) =>(
     <TouchableOpacity
@@ -85,7 +87,7 @@ const Tabs = () =>{
                 ),
             }}
         />     
-        <Tab.Screen name = "Search" component={HomeScreen}
+        {/* <Tab.Screen name = "Search" component={HomeScreen}
             options ={{
                 tabBarIcon: ({focused})=>(
                     <View style ={{alignItems: 'center', justifyContent: 'center'}}>
@@ -107,8 +109,8 @@ const Tabs = () =>{
                     </View>
                 ),
             }}
-        />     
-        <Tab.Screen name = "address" component={HomeScreen}
+        />      */}
+        <Tab.Screen name = "address" component={MapScreen}
             options ={{
                 tabBarIcon: ({focused})=>(
                     <View style ={{alignItems: 'center', justifyContent: 'center'}}>
