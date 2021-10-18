@@ -15,7 +15,7 @@ import {
 const CartScreen = ({navigation}) => {
   const totalPrice = useSelector(state => state.cartList.totalPrice);
   const newFoodList = useSelector(state => state.cartList.list);
-
+  
   const CartCard = ({item}) => {
     const dispatch = useDispatch();
     const Items = {
@@ -30,38 +30,11 @@ const CartScreen = ({navigation}) => {
 
     const [itemInfo, setItem] = useState(Items);
     const QuantityIncrease = () => {
-      // const newItem = {
-      //   id: itemInfo.id,
-      //   name: itemInfo.name,
-      //   price: itemInfo.price,
-      //   img: itemInfo.img,
-      //   About: itemInfo.About,
-      //   number: itemInfo.number + 1,
-      //   totalMoney: 0,
-      // };
-      // //console.log(newItem.price, newItem.number)
-
-      // newItem.totalMoney = newItem.price * newItem.number;
-
-      // setItem(newItem);
       const action = quantityIncrease(item.id);
       dispatch(action);
     };
 
     const QuantityDecrease = () => {
-      // const newItem = {
-      //   id: itemInfo.id,
-      //   name: itemInfo.name,
-      //   price: itemInfo.price,
-      //   img: itemInfo.img,
-      //   About: itemInfo.About,
-      //   number: itemInfo.number - 1,
-      //   totalMoney: 0,
-      // };
-      // if (newItem.number === 0) return;
-      // newItem.totalMoney = newItem.price * newItem.number;
-      // setItem(newItem);
-
       const action = quantityDecrease(item.id);
       dispatch(action);
     };
@@ -92,9 +65,6 @@ const CartScreen = ({navigation}) => {
           </Text>
         </View>
         <View style={{marginRight: 30, alignItems: 'center'}}>
-          <Text style={{fontWeight: 'bold', fontSize: 18}}>
-            {itemInfo.number}
-          </Text>
           <View style={style.actionBtn}>
             <Icon
               onPress={QuantityDecrease}
@@ -102,6 +72,9 @@ const CartScreen = ({navigation}) => {
               size={25}
               color={COLORS.white}
             />
+            <Text style={{fontWeight: 'bold', fontSize: 18}}>
+            {itemInfo.number}
+            </Text>
             <Icon
               onPress={QuantityIncrease}
               name="add"
@@ -123,10 +96,10 @@ const CartScreen = ({navigation}) => {
   };
   return (
     <SafeAreaView style={{backgroundColor: COLORS.white, flex: 1}}>
-      {/* <View style={style.header}>
-        <Icon name="arrow-back-ios" size={28} onPress={navigation.goBack} />
-        <Text style={{fontSize: 20, fontWeight: 'bold'}}>Cart</Text>
-      </View> */}
+      <View style={style.header}>
+        <Icon name="arrow-back-ios" color = {COLORS.primary} size={28} onPress={navigation.goBack} />
+        <Text style={{fontSize: 20, fontWeight: 'bold', color: COLORS.primary}}>Giỏ hàng</Text>
+      </View>
       <FlatList
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{paddingBottom: 80}}
@@ -149,7 +122,7 @@ const CartScreen = ({navigation}) => {
               </Text>
             </View>
             <View style={{marginHorizontal: 30}}>
-              <PrimaryButton title="CHECKOUT" />
+              <PrimaryButton onPress={() => navigation.navigate('Checkout')} title="CHECKOUT" />
             </View>
           </View>
         )}
@@ -187,7 +160,7 @@ const style = StyleSheet.create({
   },
   delete: {
     marginRight: -10,
-    marginTop: 94,
+    marginTop: 74,
     borderRadius: 10,
     width: 30,
     height: '100%',

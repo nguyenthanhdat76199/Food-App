@@ -35,20 +35,9 @@ const DetailScreen = (props) => {
             <TouchableOpacity>
               <Text
                 style={styles.textback}
-                onPress={() => navigation.navigate('Head')}>
+                onPress={() => navigation.goBack(null)}>
                 Back
               </Text>
-            </TouchableOpacity>
-          </View>
-          <View style={{backgroundColor: COLORS.white}}>
-            <TouchableOpacity>
-              <Image
-                source={require('../../src/assets/Thongbao.png')}
-                style={{
-                  width: 30,
-                  height: 30,
-                }}
-              />
             </TouchableOpacity>
           </View>
         </View>
@@ -119,8 +108,6 @@ export default DetailScreen;
 
 const styles = StyleSheet.create({
   container_details: {
-    paddingLeft: 24,
-    paddingRight: 24,
   },
   header: {
     paddingVertical: 20,

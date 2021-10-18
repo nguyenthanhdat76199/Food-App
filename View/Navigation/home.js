@@ -2,14 +2,15 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../../View/Screens/HomeScreen";
 import DetailScreen from "../Screens/DetailScreen";
+import MailScreen from '../Screens/MailScreen'
 
 const Stack = createStackNavigator();
 const screenOptionStyle ={
     headerStyle: {
-        backgroundColor: "#9AC4F8",
-      },
-      headerTintColor: "white",
-      headerBackTitle: "Back",
+      backgroundColor: "#9AC4F8",
+    },
+    headerTintColor: "white",
+    headerBackTitle: "Back",
 };
 
 const MainStackNavigator = () =>{
@@ -24,6 +25,12 @@ const MainStackNavigator = () =>{
             <Stack.Screen screenOptions={screenOptionStyle} 
             name='Detail' 
             component={DetailScreen}
+            options ={{headerShown: false}}
+            >
+            </Stack.Screen>
+            <Stack.Screen screenOptions={screenOptionStyle} 
+            name='Mail' 
+            component={MailScreen}
             options ={{headerShown: false}}
             >
             </Stack.Screen>

@@ -6,7 +6,7 @@ import {
   Dimensions,
   ScrollView,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {Component} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import COLORS from '../../src/consts/color';
@@ -16,13 +16,66 @@ import {
   TouchableOpacity,
 } from 'react-native-gesture-handler';
 
+import axios from 'axios'
 const categories = require('../../src/consts/categories.json');
-
-import food from '../../src/consts/food.json';
-
 const width = Dimensions.get('screen').width / 2 - 30;
-let pdjs = require('../../src/consts/foodList.json');
+//const pdjs = require('../../src/consts/foodList.json');
 
+const WIDTH = Dimensions.get('window').width;
+const HEIGHT = Dimensions.get('window').height;
+
+
+const images = [
+  'https://static.wixstatic.com/media/e7da97_e6f2bcba6fa8468facb5b4f32e6a991e~mv2.png/v1/fill/w_1200,h_628,al_c/e7da97_e6f2bcba6fa8468facb5b4f32e6a991e~mv2.png',
+  'https://vnso.vn/wp-content/uploads/2016/10/phu_nu_viet_nam_20_105.jpg',
+  'https://media.go2speed.org/brand/files/lazada/3195/VN_WomenDay_102015_640x360.jpg'
+]
+
+const Banner = () => {
+  const [imgActive, setimgActive] = useState(0);
+  const onchange = (nativeEvent) => {
+    if(nativeEvent){
+      const slide = Math.ceil(nativeEvent.contentOffset.x / nativeEvent.layoutMeasurement.width);
+      if(slide != imgActive){
+        setimgActive(slide);
+      }
+    }
+  }
+  return(
+    <View style={style.wrap}>
+      <ScrollView
+        onScroll={({nativeEvent}) => onchange(nativeEvent)}
+        showsHorizontalScrollIndicator={false}
+        pagingEnabled
+        horizontal
+        style={style.wrap}
+      >
+      {
+        images.map((image, index) =>
+          <Image
+            key={index}
+            resizeMode='stretch'
+            style={style.wrap}
+            source = {{uri: image}}
+          />
+        )
+      }
+      </ScrollView>
+      <View style={style.wrapDot}>
+        {
+          images.map((image, index) =>
+            <Text
+              key={index}
+              style = {imgActive == index ? style.dotActive : style.dot}
+            >
+              ●
+            </Text>
+          )
+        }
+      </View>
+    </View>
+  );
+}
 
 export default class HomeScreen extends Component {
   constructor(props) {
@@ -31,7 +84,8 @@ export default class HomeScreen extends Component {
     this.refreshFlatlist = this.refreshFlatlist.bind(this);
     this.gotoDetail = this.gotoDetail.bind(this);
     this.state = {
-      data: pdjs.Pizza,
+      foods:null,
+      data:null,
     };
   }
   gotoDetail(product) {
@@ -40,6 +94,25 @@ export default class HomeScreen extends Component {
 
   refreshFlatlist(products) {
     this.setState((this.state.data = products));
+  }
+
+  componentDidMount() {
+    this.fetchCountryData()
+  }
+  fetchCountryData = async () => {
+    const url = 'https://616a72e516e7120017fa0f9d.mockapi.io/api/products'
+    try {
+      const response = await axios.get(url)
+      const data = await response.data
+      this.setState({
+        foods: data[0]
+      })
+      this.setState({
+        data: data[0].Pizza
+      })
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   render() {
@@ -79,14 +152,13 @@ export default class HomeScreen extends Component {
                 style={{
                   flexDirection: 'row',
                   justifyContent: 'space-between',
-                  marginTop: 15,
+                  marginTop: 10,
                 }}>
                 <Text
                   style={{
                     fontSize: 15,
                     textAlign: 'left',
                     fontWeight: 'bold',
-                    marginLeft: 5,
                   }}>
                   {product.price} VNĐ
                 </Text>
@@ -98,7 +170,6 @@ export default class HomeScreen extends Component {
                     borderRadius: 5,
                     justifyContent: 'center',
                     alignItems: 'center',
-                    marginRight: 10,
                   }}>
                   <Text
                     style={{
@@ -118,26 +189,10 @@ export default class HomeScreen extends Component {
     };
     return (
       <SafeAreaView style={{flex: 1, backgroundColor: COLORS.white}}>
-        <View style={style.header}>
-          <View>
-            <View style={{flexDirection: 'row'}}>
-              <Text style={{fontSize: 28}}>Hello,</Text>
-              <Text style={{fontSize: 28, fontWeight: 'bold', marginLeft: 10}}>
-                Nam
-              </Text>
-            </View>
-            <Text style={{marginTop: 5, fontSize: 20, color: COLORS.grey}}>
-              What do you want today
-            </Text>
-          </View>
-          <Image
-            source={require('../../src/assets/user.png')}
-            style={{height: 30, width: 30, borderRadius: 25}}
-          />
-        </View>
+        <Banner/>
         <View
           style={{
-            marginTop: 40,
+            marginTop: 10,
             flexDirection: 'row',
             paddingHorizontal: 20,
           }}>
@@ -151,14 +206,13 @@ export default class HomeScreen extends Component {
               placeholder="Search for food"
             />
           </View>
-          <View style={style.sortBtn}>
+          <TouchableOpacity onPress={() => this.navigation.navigate('Mail')} style={style.sortBtn}>
             <Image
-              source={require('../../src/assets/setting.png')}
+              source={require('../../src/assets/email.png')}
               style={{height: 20, width: 20, marginLeft: 15, marginTop: 15}}
             />
-          </View>
+          </TouchableOpacity>
         </View>
-
         <View
           style={{
             flexDirection: 'row',
@@ -168,13 +222,11 @@ export default class HomeScreen extends Component {
           }}>
           <ScrollView
             horizontal
-            // contentContainerStyle={style.categoriesListContainer}
             showsHorizontalScrollIndicator={false}>
             {categories.list.map((category, index) => (
               <View style={style.btnCategory} key={index}>
                 <TouchableOpacity  activeOpacity={0.8} style ={{flexDirection:'row'}}
-                  // onPress ={()=> console.log(pdjs[`${category.name}`])}
-                  onPress ={()=> this.refreshFlatlist(pdjs[`${category.name}`])}
+                  onPress ={()=> this.refreshFlatlist(this.state.foods[`${category.name}`])}
                   >
                   <Image
                     source={{uri: category.img}}
@@ -192,7 +244,7 @@ export default class HomeScreen extends Component {
             ))}
           </ScrollView>
         </View>
-
+        
         <FlatList
           numColumns={2}
           data={this.state.data}
@@ -200,6 +252,7 @@ export default class HomeScreen extends Component {
           columnWrapperStyle={{justifyContent: 'space-between'}}
           showsHorizontalScrollIndicator={false}
         />
+
       </SafeAreaView>
     );
   }
@@ -260,13 +313,32 @@ const style = StyleSheet.create({
   Card: {
     height: 250,
     width,
+    paddingHorizontal: 12,
     marginHorizontal: 2,
-    marginBottom: 20,
-    marginTop: 30,
+    marginBottom: 10,
+    marginTop: 10,
     borderRadius: 15,
     elevation: 13,
     backgroundColor: COLORS.white,
     marginLeft: 10,
     marginRight: 10,
   },
+  wrap:{
+    width: WIDTH,
+    height: HEIGHT * 0.2,
+  },
+  wrapDot:{
+    position: 'absolute',
+    bottom: 0,
+    flexDirection: 'row',
+    alignSelf: 'center'
+  },
+  dotActive : {
+    margin: 3,
+    color: COLORS.primary
+  },
+  dot: {
+    margin: 3,
+    color: 'white'
+  }
 });

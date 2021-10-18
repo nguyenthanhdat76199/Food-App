@@ -4,10 +4,17 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import HomeScreen from '../Screens/HomeScreen.js';
 import CartScreen from '../Screens/CartScreen.js';
+import Favorite from '../Screens/Favorite.js';
+import Profile from '../Screens/Profile.js';
+
+
 
 
 import COLORS from '../../src/consts/color';
 import MainStackNavigator from './Home';
+import CartStackNavigator from './CartTab'
+import FavoriteStackNavigator from './FavoriteTab'
+import MapScreen from '../Screens/MapScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -67,21 +74,15 @@ const Tabs = () => {
                   tintColor: focused ? COLORS.primary : COLORS.grey,
                 }}
               />
-              <Text
-                style={{
-                  color: focused ? COLORS.primary : COLORS.grey,
-                  fontSize: 12,
-                }}>
-                Trang chủ
-              </Text>
             </View>
           ),
         }}
       />
       <Tab.Screen
-        name="Favorite"
-        component={HomeScreen}
+        name="FavoriteTab"
+        component={FavoriteStackNavigator}
         options={{
+          headerShown: false,
           tabBarIcon: ({focused}) => (
             <View style={{alignItems: 'center', justifyContent: 'center'}}>
               <Image
@@ -93,25 +94,19 @@ const Tabs = () => {
                   tintColor: focused ? COLORS.primary : COLORS.grey,
                 }}
               />
-              <Text
-                style={{
-                  color: focused ? COLORS.primary : COLORS.grey,
-                  fontSize: 12,
-                }}>
-                Yêu Thích
-              </Text>
             </View>
           ),
         }}
       />
       <Tab.Screen
-        name="Search"
-        component={HomeScreen}
+        name="Profile"
+        component={Profile}
         options={{
+          headerShown: false,
           tabBarIcon: ({focused}) => (
             <View style={{alignItems: 'center', justifyContent: 'center'}}>
               <Image
-                source={require('../../src/assets/search.png')}
+                source={require('../../src/assets/user.png')}
                 resizeMode="contain"
                 style={{
                   width: 35,
@@ -121,20 +116,13 @@ const Tabs = () => {
                   tintColor: focused ? COLORS.primary : COLORS.grey,
                 }}
               />
-              <Text
-                style={{
-                  color: focused ? COLORS.primary : COLORS.grey,
-                  fontSize: 12,
-                }}>
-                Tìm kiếm
-              </Text>
             </View>
           ),
         }}
       />
       <Tab.Screen
         name="Address"
-        component={HomeScreen}
+        component={MapScreen}
         options={{
           tabBarIcon: ({focused}) => (
             <View style={{alignItems: 'center', justifyContent: 'center'}}>
@@ -147,21 +135,15 @@ const Tabs = () => {
                   tintColor: focused ? COLORS.primary : COLORS.grey,
                 }}
               />
-              <Text
-                style={{
-                  color: focused ? COLORS.primary : COLORS.grey,
-                  fontSize: 12,
-                }}>
-                Địa chỉ
-              </Text>
             </View>
           ),
         }}
       />
       <Tab.Screen
-        name="Cart"
-        component={CartScreen}
+        name="CartTab"
+        component={CartStackNavigator}
         options={{
+          headerShown: false,
           tabBarIcon: ({focused}) => (
             <View style={{alignItems: 'center', justifyContent: 'center'}}>
               <Image
@@ -173,13 +155,6 @@ const Tabs = () => {
                   tintColor: focused ? COLORS.primary : COLORS.grey,
                 }}
               />
-              <Text
-                style={{
-                  color: focused ? COLORS.primary : COLORS.grey,
-                  fontSize: 12,
-                }}>
-                Giỏ hàng
-              </Text>
             </View>
           ),
         }}

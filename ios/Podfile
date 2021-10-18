@@ -12,6 +12,8 @@ target 'OnTapCucManh' do
     :hermes_enabled => false
   )
 
+  pod 'react-native-maps', :path => '../node_modules/react-native-maps'
+
   target 'OnTapCucManhTests' do
     inherit! :complete
     # Pods for testing
