@@ -11,7 +11,7 @@ import Profile from '../Screens/Profile.js';
 
 
 import COLORS from '../../src/consts/color';
-import MainStackNavigator from './Home';
+import MainStackNavigator from './home';
 import CartStackNavigator from './CartTab'
 import FavoriteStackNavigator from './FavoriteTab'
 import MapScreen from '../Screens/MapScreen';
